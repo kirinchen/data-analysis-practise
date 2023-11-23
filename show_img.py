@@ -28,3 +28,15 @@ print(image.shape)
 # display the array of pixels as an image
 plt.imshow(image)
 plt.show()
+new_image = np.copy(image)
+for x, col in enumerate(new_image):
+    for y, row in enumerate(col):
+        print(new_image[x, y])
+        avgv = (row[0] + row[1] + row[2]) / 3
+        new_image[x,y] =  np.float32(avgv)
+        # new_image[x, y, 0] = avgv
+        # new_image[x, y, 1] = avgv
+        # new_image[x, y, 2] = avgv
+
+plt.imshow(new_image)
+plt.show()
